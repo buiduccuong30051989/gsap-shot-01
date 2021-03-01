@@ -1,0 +1,66 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+  - const title = "gsap shot 01"
+
+block content
+  main.banner
+    .header.js-header
+      .container.mx-auto
+        .header-inner
+          a(href="#").logo
+            .logo-img-wrap
+              img.logo-img.js-logo-img(src='img/logo.png' alt='logo')
+            .logo-desc
+              p.js-logo-text Black Lives
+              p.js-logo-text Matter
+          nav.nav
+            a.js-nav-item(href="#") Home
+            a.js-nav-item(href="#") News
+            a.js-nav-item(href="#") About
+            a.js-nav-item(href="#") Global Action
+            a.js-nav-item(href="#") Contact
+            a.js-nav-item(href="#") Donate
+          .header-control
+            button.btn-search.js-header-control
+              +iconSvg('search')
+            button.js-btn-mobile-menu.btn-mobile-menu.ml-4.js-header-control(class="lg:hidden")
+              .burger
+                .burger-bar.bar-top
+                .burger-bar.bar-bot
+      ul.menu
+        li.menu-item.js-nav-item-mobile
+          a(href="#") Home
+        li.menu-item.js-nav-item-mobile
+          a(href="#") News
+        li.menu-item.js-nav-item-mobile
+          a(href="#") About
+        li.menu-item.js-nav-item-mobile
+          a(href="#") Global Action
+        li.menu-item.js-nav-item-mobile
+          a(href="#") Contact
+        li.menu-item.js-nav-item-mobile
+          a(href="#") Donate
+    img.banner-cover(src='img/banner.png' alt='cover')
+    .banner-content
+      .container.mx-auto
+        .banner-content-inner
+          h2.js-caption It is not 
+            span.text-stroke Black 
+          h2.pl.js-caption
+            span v
+            span.text-stroke .
+            span s 
+            span White
+          .mb-4(class="md:mb-8")
+          h2.js-caption It's 
+            span.text-stroke every
+            span one 
+          h2.pl.js-caption
+            span v
+            span.text-stroke .
+            span s 
+            span.text-red-900 Racism
+block scripts
+  script(src="js/main.js")

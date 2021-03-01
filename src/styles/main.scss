@@ -1,0 +1,24 @@
+// 1. Abstracts
+// ------------
+@import 'abstracts/functions';
+@import 'abstracts/tailwind-variables';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base
+// -------
+@import 'base/global';
+@import 'base/typography';
+@import 'base/utilities';
+
+// 3. Components
+// -------------
+@import '../blocks/components/components';
+
+// 4. Modules
+// -------------
+@import '../blocks/modules/modules';
+
+// 5. Pages
+// -------------
+@import 'pages/home';

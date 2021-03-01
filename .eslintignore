@@ -1,0 +1,4 @@
+dest/
+tmp/
+gulpfile.js
+tailwind.config.js
