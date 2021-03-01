@@ -64,6 +64,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9",
+    "gsap": "^3.6.0",
     "gulp-cached": "^1.1.1",
     "gulp-dependents": "^1.2.5",
     "gulp-postcss": "^9.0.0",

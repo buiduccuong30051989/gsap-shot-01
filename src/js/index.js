@@ -1,24 +1,58 @@
-import './import/modules';
-import './import/components';
+import { gsap, Expo } from 'gsap';
+
+function isMobile() {
+  return 'ontouchstart' in document.documentElement;
+}
+
+function animateLogo() {
+  const logoImg = document.getElementsByClassName('js-logo-img');
+  const logoText = [...document.getElementsByClassName('js-logo-text')];
+
+  gsap.from(logoImg, {
+    opacity: 0,
+    xPercent: 100,
+    delay: 1,
+  });
+
+  logoText.forEach(function (item) {
+    gsap.from(item, {
+      opacity: 0,
+      xPercent: -100,
+      delay: 1,
+    });
+  });
+}
+
+function animateNav() {
+  const el = '.js-nav-item';
+  gsap.from(el, {
+    opacity: 0,
+    delay: 1,
+    y: -10,
+    x: -5,
+    stagger: 0.1,
+    ease: Expo.easeInOut,
+    onComplete: function () {
+      gsap.set(el, { clearProps: 'all' });
+    },
+  });
+}
+
+function animateControl() {
+  gsap.from('.js-header-control', {
+    opacity: 0,
+    delay: 2,
+    y: -10,
+    x: -5,
+    stagger: 0.1,
+    ease: Expo.easeInOut,
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('html');
-  if ('themePreference' in localStorage) {
-    const mode = localStorage.themePreference;
-    root.classList.add(mode);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    root.classList.add('dark');
+  animateLogo();
+  if (!isMobile()) {
+    animateNav();
   }
-
-  const btn = document.querySelector('.js-toggle-dark-mode');
-  if (btn) {
-    btn.addEventListener('click', function () {
-      root.classList.toggle('dark');
-      if (root.classList.contains('dark')) {
-        localStorage.setItem('themePreference', 'dark');
-      } else {
-        localStorage.setItem('themePreference', 'light');
-      }
-    });
-  }
+  animateControl();
 });
