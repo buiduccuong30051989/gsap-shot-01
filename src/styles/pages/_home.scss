@@ -12,6 +12,11 @@ button {
   }
 }
 
+body {
+  font-family: $base-font;
+  @apply text-sm;
+}
+
 // Banner Layout
 .banner {
   @apply w-screen h-screen overflow-hidden bg-black text-white;
