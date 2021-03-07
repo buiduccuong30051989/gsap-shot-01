@@ -1,4 +1,5 @@
-dest/
+dist/
+docs/
 tmp/
 gulpfile.js
 tailwind.config.js
